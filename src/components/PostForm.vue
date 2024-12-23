@@ -1,13 +1,34 @@
-<script setup>
+<script>
+export default {
+ data() {
+   return {
+     post: {
+       title: '',
+       body: ''
+     }
+   }
+ },
+  methods: {
+    createPost() {
+      this.post.id = Date.now();
+      this.$emit("create", this.post);
+      this.post = {
+        title: '',
+        body: ''
+      }
+    }
+  }
+
+}
 
 </script>
 
 <template>
   <form @submit.prevent>
     <h4>Создание поста</h4>
-    <input class="input" type="text" placeholder="Название" v-bind:value="title" @input="title=$event.target.value">
-    <input class="input" type="text" placeholder="Описание" v-bind:value="body" @input="body=$event.target.value">
-    <button class="btn" >Создать</button>
+    <input class="input" type="text" placeholder="Название" v-model="post.title">
+    <input class="input" type="text" placeholder="Описание" v-model="post.body">
+    <button class="btn" @click="createPost">Создать</button>
   </form>
 </template>
 

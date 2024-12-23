@@ -1,12 +1,14 @@
 <template>
   <div class="app">
-
+      <PostForm   @create="createPost"/>
+      <PostList :posts="posts" />
   </div>
 </template>
 <script>
 import PostForm from "@/components/PostForm.vue";
 import PostList from "@/components/PostList.vue";
   export default {
+    components: { PostForm, PostList},
     data() {
       return {
         posts : [
@@ -14,21 +16,12 @@ import PostList from "@/components/PostList.vue";
           {id: 2, title: "ЭД 2", body: "Описание поста 2"},
           {id: 3, title: "ЭД 3", body: "Описание поста 3"},
         ],
-        title: "",
-        body: "",
       }
     },
     methods:
     {
-      createPost(){
-        const newPost = {
-          id: Date.now(),
-          title: this.title,
-          body: this.body,
-        }
-        this.posts.push(newPost)
-        this.title = "";
-        this.body = "";
+      createPost(post){
+        this.posts.push(post);
       }
     }
   }
