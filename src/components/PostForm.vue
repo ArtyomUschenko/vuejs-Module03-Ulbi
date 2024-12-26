@@ -1,6 +1,9 @@
 <script>
 
+import MyInput from "@/components/UI/MyInput.vue";
+
 export default {
+  components: {MyInput},
  data() {
    return {
      post: {
@@ -27,8 +30,8 @@ export default {
 <template>
   <form @submit.prevent>
     <h4>Создание поста</h4>
-    <input class="input" type="text" placeholder="Название" v-model="post.title">
-    <input class="input" type="text" placeholder="Описание" v-model="post.body">
+    <MyInput type="text" placeholder="Название" v-model="post.title"/>
+    <MyInput type="text" placeholder="Описание" v-model="post.body"/>
     <MyButton class="btn" @click="createPost">Создать</MyButton>
   </form>
 </template>
@@ -42,10 +45,5 @@ export default {
     align-self: flex-end;
     margin-top: 10px;
   }
-  .input {
-    width: 100%;
-    border: 1px solid #446b5d;
-    padding: 10px 15px;
-    margin-top: 10px;
-  }
+
 </style>
