@@ -1,6 +1,9 @@
 <script>
+  import Postitem from "@/components/Postitem.vue";
+
   export default
   {
+    components: {Postitem},
     props: {
       posts: {
         type: Array,
@@ -12,9 +15,12 @@
 </script>
 
 <template>
-  <div class="post" v-for="post in posts">
-    <div>Название: <strong>{{ post.title }}</strong></div>
-    <div>Описание: <strong>{{ post.body }}</strong></div>
+  <div class="">
+      <h3>Список пользователей</h3>
+      <postitem
+          v-for="post in posts"
+          :post="post"
+      />
   </div>
 </template>
 
