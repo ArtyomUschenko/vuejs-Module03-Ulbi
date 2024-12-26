@@ -25,9 +25,5 @@
 </template>
 
 <style scoped>
-.post {
-  padding: 15px;
-  border: 2px solid #446b5d;
-  margin-top: 15px;
-}
+
 </style>

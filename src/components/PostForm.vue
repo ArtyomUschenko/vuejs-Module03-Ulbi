@@ -1,5 +1,8 @@
 <script>
+import MyButton from "@/components/Ul/MyButton.vue";
+
 export default {
+  components: {MyButton},
  data() {
    return {
      post: {
@@ -28,7 +31,7 @@ export default {
     <h4>Создание поста</h4>
     <input class="input" type="text" placeholder="Название" v-model="post.title">
     <input class="input" type="text" placeholder="Описание" v-model="post.body">
-    <button class="btn" @click="createPost">Создать</button>
+    <MyButton class="btn" @click="createPost">Создать</MyButton>
   </form>
 </template>
 
@@ -38,15 +41,7 @@ export default {
     flex-direction: column;
   }
   .btn {
-    padding: 10px 15px;
-    background: none;
-    border-radius: 10px;
-    border: 1px solid #446b5d;
     align-self: flex-end;
-    margin-top: 10px;
-    color: #446b5d;
-    font-weight: bold;
-    cursor: pointer;
   }
   .input {
     width: 100%;
