@@ -30,8 +30,10 @@ export default {
 <template>
   <form @submit.prevent>
     <h4>Создание поста</h4>
-    <MyInput type="text" placeholder="Название" v-model="post.title"/>
-    <MyInput type="text" placeholder="Описание" v-model="post.body"/>
+    <MyInput type="text" placeholder="Название"
+    v-model="post.title"/>
+    <MyInput type="text" placeholder="Описание"
+             v-model="post.body" />
     <MyButton class="btn" @click="createPost">Создать</MyButton>
   </form>
 </template>

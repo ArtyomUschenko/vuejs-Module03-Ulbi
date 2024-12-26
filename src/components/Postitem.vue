@@ -16,7 +16,7 @@
     <div>Название: <strong>{{ post.title }}</strong></div>
     <div>Описание: <strong>{{ post.body }}</strong></div>
     <div class="post__btns">
-      <MyButton @click="$emit('delete')">Удалить</MyButton>
+      <MyButton @click="$emit('delete', post)">Удалить</MyButton>
     </div>
   </div>
 

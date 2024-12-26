@@ -1,7 +1,8 @@
 <template>
   <div class="app">
       <PostForm   @create="createPost"/>
-      <PostList :posts="posts" />
+      <PostList :posts="posts"
+      @delete="deletePost"/>
   </div>
 </template>
 <script>
@@ -22,6 +23,9 @@ import PostList from "@/components/PostList.vue";
     {
       createPost(post){
         this.posts.push(post);
+      },
+      deletePost(post) {
+        this.posts = this.posts.filter(p => p.id !== post.id);
       }
     }
   }
