@@ -1,5 +1,7 @@
 <script>
+
   export default {
+
     props: {
       post: {
         type: Object,
@@ -14,7 +16,7 @@
     <div>Название: <strong>{{ post.title }}</strong></div>
     <div>Описание: <strong>{{ post.body }}</strong></div>
     <div class="post__btns">
-      <button @click="$emit('delete')">Удалить</button>
+      <MyButton @click="$emit('delete')">Удалить</MyButton>
     </div>
   </div>
 

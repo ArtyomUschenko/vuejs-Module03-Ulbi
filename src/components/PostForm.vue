@@ -1,8 +1,6 @@
 <script>
-import MyButton from "@/components/Ul/MyButton.vue";
 
 export default {
-  components: {MyButton},
  data() {
    return {
      post: {
@@ -42,6 +40,7 @@ export default {
   }
   .btn {
     align-self: flex-end;
+    margin-top: 10px;
   }
   .input {
     width: 100%;

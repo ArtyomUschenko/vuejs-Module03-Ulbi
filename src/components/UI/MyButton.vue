@@ -1,9 +1,12 @@
-<script setup>
+<script>
+export default {
+  name: 'MyButton'
+}
 
 </script>
 
 <template>
-  <button>
+  <button class="btn">
     <slot></slot>
   </button>
 </template>
@@ -14,7 +17,6 @@
     background: none;
     border-radius: 10px;
     border: 1px solid #446b5d;
-    margin-top: 10px;
     color: #446b5d;
     font-weight: bold;
     cursor: pointer;
